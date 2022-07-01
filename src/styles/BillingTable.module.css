@@ -1,0 +1,24 @@
+.billingTable {
+    width: 100%;
+    margin-top: 3rem;
+    background-color: #fff;
+    padding: 1rem;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.billingTable thead tr {
+    background-color: #00bedd;
+    color: #fff !important;
+}
+.billingTable th {
+    text-align: left;
+}
+.billingTable th,
+.billingTable td {
+    padding: 0.8rem;
+}
+
+.billingTable tbody tr:nth-child(2n) {
+    background: #eee;
+}
