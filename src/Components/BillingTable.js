@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "../styles/BillingTable.module.css";
+import Modal from "./Modal";
+import EditBillForm from "./BillingForm";
 
-const BillingTable = () => {
+const BillingTable = ({ bills, deleteBill, getBills }) => {
+    const [editContent, setEditContent] = useState({});
+    const [showModal, setShowModal] = useState(false);
+
+    //edit handling
+    const handleEdit = (editInfo) => {
+        setEditContent(editInfo);
+        setShowModal(true);
+    };
     return (
         <>
             <table className={classes.billingTable}>
@@ -16,96 +26,43 @@ const BillingTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>21548</td>
-                        <td>Ranok Raihan</td>
-                        <td>rawnok.39@gmail.com</td>
-                        <td>01783687070</td>
-                        <td>210</td>
-                        <td>Edit | Delete</td>
-                    </tr>
-                    <tr>
-                        <td>21548</td>
-                        <td>Ranok Raihan</td>
-                        <td>rawnok.39@gmail.com</td>
-                        <td>01783687070</td>
-                        <td>210</td>
-                        <td>Edit | Delete</td>
-                    </tr>
-                    <tr>
-                        <td>21548</td>
-                        <td>Ranok Raihan</td>
-                        <td>rawnok.39@gmail.com</td>
-                        <td>01783687070</td>
-                        <td>210</td>
-                        <td>Edit | Delete</td>
-                    </tr>
-                    <tr>
-                        <td>21548</td>
-                        <td>Ranok Raihan</td>
-                        <td>rawnok.39@gmail.com</td>
-                        <td>01783687070</td>
-                        <td>210</td>
-                        <td>Edit | Delete</td>
-                    </tr>
-                    <tr>
-                        <td>21548</td>
-                        <td>Ranok Raihan</td>
-                        <td>rawnok.39@gmail.com</td>
-                        <td>01783687070</td>
-                        <td>210</td>
-                        <td>Edit | Delete</td>
-                    </tr>
-                    <tr>
-                        <td>21548</td>
-                        <td>Ranok Raihan</td>
-                        <td>rawnok.39@gmail.com</td>
-                        <td>01783687070</td>
-                        <td>210</td>
-                        <td>Edit | Delete</td>
-                    </tr>
-                    <tr>
-                        <td>21548</td>
-                        <td>Ranok Raihan</td>
-                        <td>rawnok.39@gmail.com</td>
-                        <td>01783687070</td>
-                        <td>210</td>
-                        <td>Edit | Delete</td>
-                    </tr>
-                    <tr>
-                        <td>21548</td>
-                        <td>Ranok Raihan</td>
-                        <td>rawnok.39@gmail.com</td>
-                        <td>01783687070</td>
-                        <td>210</td>
-                        <td>Edit | Delete</td>
-                    </tr>
-                    <tr>
-                        <td>21548</td>
-                        <td>Ranok Raihan</td>
-                        <td>rawnok.39@gmail.com</td>
-                        <td>01783687070</td>
-                        <td>210</td>
-                        <td>Edit | Delete</td>
-                    </tr>
-                    <tr>
-                        <td>21548</td>
-                        <td>Ranok Raihan</td>
-                        <td>rawnok.39@gmail.com</td>
-                        <td>01783687070</td>
-                        <td>210</td>
-                        <td>Edit | Delete</td>
-                    </tr>
-                    <tr>
-                        <td>21548</td>
-                        <td>Ranok Raihan</td>
-                        <td>rawnok.39@gmail.com</td>
-                        <td>01783687070</td>
-                        <td>210</td>
-                        <td>Edit | Delete</td>
-                    </tr>
+                    {bills.map((bill) => {
+                        return (
+                            <tr key={bill._id}>
+                                <td>{bill._id}</td>
+                                <td>{bill.fullName}</td>
+                                <td>{bill.email}</td>
+                                <td>{bill.mobile}</td>
+                                <td>{bill.totalPaid}</td>
+                                <td>
+                                    <button
+                                        className={classes.editButton}
+                                        onClick={() => handleEdit(bill)}
+                                    >
+                                        Edit
+                                    </button>
+                                    <button
+                                        className={classes.deleteButton}
+                                        onClick={() => deleteBill(bill._id)}
+                                    >
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+                        );
+                    })}
                 </tbody>
             </table>
+            {showModal && (
+                <Modal>
+                    <EditBillForm
+                        showModal={setShowModal}
+                        role='edit'
+                        editInfo={editContent}
+                        getBills={getBills}
+                    />
+                </Modal>
+            )}
         </>
     );
 };
