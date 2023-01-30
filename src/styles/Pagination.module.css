@@ -1,0 +1,19 @@
+.paginationContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 5px;
+}
+.paginationButton {
+  width: 30px;
+  border: none;
+  background-color: rgb(34, 196, 6);
+  color: #fff;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+.active {
+  background-color: rgb(4, 27, 132);
+}

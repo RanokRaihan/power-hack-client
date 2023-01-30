@@ -1,0 +1,25 @@
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 0.5rem;
+    background: rgb(252, 3, 86);
+    color: #fff;
+    cursor: pointer;
+}

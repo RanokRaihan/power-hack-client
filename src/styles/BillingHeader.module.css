@@ -1,0 +1,71 @@
+.billingHeader {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  background: #fff;
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+}
+.billingHeader input {
+  border: none;
+  outline: none;
+}
+.searchForm {
+  display: flex;
+  padding: 0.8rem;
+  gap: 0.8rem;
+}
+
+.inputWrapper {
+  border: 1px solid #949494;
+  outline: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  display: flex;
+}
+.billingHeader p {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: #f7f7f7;
+}
+.billingHeader button {
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s all;
+}
+.searchButton {
+  cursor: pointer;
+  background: #ff7b00;
+  color: #fff;
+}
+.searchButton:hover {
+  background: #e46f02;
+}
+.addBillButton {
+  background-color: #09ac09;
+  color: #fff;
+  justify-self: flex-end;
+}
+.addBillButton:hover {
+  background-color: #078d07;
+}
+
+.clearButton {
+  font-size: 10px !important;
+  color: #fff;
+  background-color: #f80000;
+  width: 20px;
+  height: 20px;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  display: block;
+}

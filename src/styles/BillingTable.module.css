@@ -1,0 +1,52 @@
+.billingTable {
+    width: 100%;
+    margin-top: 3rem;
+    background-color: #fff;
+    padding: 1rem;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.billingTable thead tr {
+    background-color: #00bedd;
+    color: #fff !important;
+}
+.billingTable th {
+    text-align: left;
+}
+.billingTable th,
+.billingTable td {
+    padding: 0.8rem;
+}
+
+.billingTable tbody tr:nth-child(2n) {
+    background: #eee;
+}
+
+.billingTable button {
+    /* min-width: px; */
+    padding: 0.5rem 0.8rem;
+    margin: 0 5px;
+    border: none;
+    outline: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s all;
+}
+
+.editButton {
+    background: #ffff00;
+}
+.editButton:hover {
+    background: #e3c904;
+}
+.deleteButton {
+    background-color: #fa3b10;
+    color: #fff;
+}
+.deleteButton:hover {
+    background-color: #de2e06;
+    color: #fff;
+}
