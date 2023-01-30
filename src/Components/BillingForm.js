@@ -36,7 +36,7 @@ const BillingForm = ({ showModal, getBills, currentPage, role, editInfo }) => {
           if (!err) {
             setLoading(false);
             showModal(false);
-            getBills();
+            getBills(1, "");
           } else {
             //console.log(err);
             setError(err);
@@ -51,7 +51,7 @@ const BillingForm = ({ showModal, getBills, currentPage, role, editInfo }) => {
           if (!err) {
             setLoading(false);
             showModal(false);
-            getBills(currentPage);
+            getBills(currentPage, "");
           } else {
             setError(err);
             setLoading(false);
